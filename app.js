@@ -1,5 +1,6 @@
 const input = document.querySelector('.input');
 const output = document.querySelector('.output');
+const resetKey = document.querySelector('.reset');
 const numberKeyList = document.querySelectorAll('.number');
 const operatorKeyList = document.querySelectorAll('.operator');
 
@@ -17,6 +18,11 @@ const setInputOperator = (operator) => {
 };
 
 // onclick 이벤트 핸들러
+const onClickReset = () => {
+  input.innerText = '0';
+  output.innerText = '';
+};
+
 const onClickNumber = (event) => {
   setInputNumber(event.target.innerText);
 };
@@ -26,6 +32,8 @@ const onClickOperator = (event) => {
 };
 
 // key 각각에 클릭 이벤트 리스너 달기
+resetKey.addEventListener('click', onClickReset);
+
 numberKeyList.forEach((key) => {
   key.addEventListener('click', onClickNumber);
 });
