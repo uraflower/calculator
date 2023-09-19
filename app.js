@@ -19,7 +19,7 @@ const calculate = () => {
 };
 
 // 숫자 입력 핸들러
-const setInputNumber = (number) => {
+const pushNumber = (number) => {
   if (input.innerText == '') input.innerText = number;
   else input.innerText += number;
   calculate();
@@ -30,7 +30,7 @@ const setIsDotUsed = (value) => {
 };
 
 // 연산자 입력 핸들러
-const setInputOperator = (operator) => {
+const pushOperator = (operator) => {
   if (isNaN(input.innerText[input.innerText.length - 1]))
     input.innerText = input.innerText.slice(0, -1) + operator;
   else input.innerText += operator;
@@ -51,12 +51,12 @@ const onClickReset = () => {
 };
 
 const onClickNumber = (event) => {
-  setInputNumber(event.target.innerText);
+  pushNumber(event.target.innerText);
 };
 
 const onClickOperator = (event) => {
   if (event.target.value == 'dot') pushDot(event.target.innerText);
-  else setInputOperator(event.target.innerText);
+  else pushOperator(event.target.innerText);
 };
 
 const onClickEval = () => {
