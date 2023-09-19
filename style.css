@@ -18,10 +18,12 @@ header {
 
 .input {
   color: rgb(0, 0, 0);
+  font-size: 30px;
 }
 
 .output {
   color: rgb(170, 170, 170);
+  font-size: 30px;
 }
 
 .keypad {

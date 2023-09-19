@@ -47,6 +47,7 @@ const pushDot = (dot) => {
 const onClickReset = () => {
   input.innerText = '';
   output.innerText = '';
+  setIsDotUsed(false);
 };
 
 const onClickNumber = (event) => {
