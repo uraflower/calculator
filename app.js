@@ -4,10 +4,22 @@ const resetKey = document.querySelector('.reset');
 const numberKeyList = document.querySelectorAll('.number');
 const operatorKeyList = document.querySelectorAll('.operator');
 
+const calculate = () => {
+  try {
+    const _inputText = input.innerText
+      .replaceAll('x', '*')
+      .replaceAll('÷', '/');
+    output.innerText = eval(_inputText);
+  } catch (e) {
+    console.log('Calculation Error');
+  }
+};
+
 // 숫자 입력 핸들러
 const setInputNumber = (number) => {
   if (input.innerText == '0') input.innerText = number;
   else input.innerText = input.innerText + number;
+  calculate();
 };
 
 // 연산자 입력 핸들러
