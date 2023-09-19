@@ -21,7 +21,7 @@ const calculate = () => {
 // 숫자 입력 핸들러
 const setInputNumber = (number) => {
   if (input.innerText == '0') input.innerText = number;
-  else input.innerText = input.innerText + number;
+  else input.innerText += number;
   calculate();
 };
 
@@ -33,7 +33,7 @@ const setIsDotUsed = (value) => {
 const setInputOperator = (operator) => {
   if (isNaN(input.innerText[input.innerText.length - 1]))
     input.innerText = input.innerText.slice(0, -1) + operator;
-  else input.innerText = input.innerText + operator;
+  else input.innerText += operator;
   setIsDotUsed(false);
 };
 
