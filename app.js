@@ -5,6 +5,8 @@ const numberKeyList = document.querySelectorAll('.number');
 const operatorKeyList = document.querySelectorAll('.operator');
 const evalKey = document.querySelector('.evaluate');
 
+let isDotUsed = false;
+
 const calculate = () => {
   try {
     const _inputText = input.innerText
@@ -23,11 +25,23 @@ const setInputNumber = (number) => {
   calculate();
 };
 
+const setIsDotUsed = (value) => {
+  isDotUsed = value;
+};
+
 // 연산자 입력 핸들러
 const setInputOperator = (operator) => {
   if (isNaN(input.innerText[input.innerText.length - 1]))
     input.innerText = input.innerText.slice(0, -1) + operator;
   else input.innerText = input.innerText + operator;
+  setIsDotUsed(false);
+};
+
+const pushDot = (dot) => {
+  if (isDotUsed == false) {
+    input.innerText += dot;
+    setIsDotUsed(true);
+  }
 };
 
 // onclick 이벤트 핸들러
@@ -41,7 +55,8 @@ const onClickNumber = (event) => {
 };
 
 const onClickOperator = (event) => {
-  setInputOperator(event.target.innerText);
+  if (event.target.value == 'dot') pushDot(event.target.innerText);
+  else setInputOperator(event.target.innerText);
 };
 
 const onClickEval = () => {
