@@ -20,7 +20,7 @@ const calculate = () => {
 
 // 숫자 입력 핸들러
 const setInputNumber = (number) => {
-  if (input.innerText == '0') input.innerText = number;
+  if (input.innerText == '') input.innerText = number;
   else input.innerText += number;
   calculate();
 };
@@ -46,7 +46,7 @@ const pushDot = (dot) => {
 
 // onclick 이벤트 핸들러
 const onClickReset = () => {
-  input.innerText = '0';
+  input.innerText = '';
   output.innerText = '';
 };
 
