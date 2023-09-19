@@ -22,7 +22,6 @@ const calculate = () => {
 const pushNumber = (number) => {
   if (input.innerText == '') input.innerText = number;
   else input.innerText += number;
-  calculate();
 };
 
 const setIsDotUsed = (value) => {
@@ -52,6 +51,7 @@ const onClickReset = () => {
 
 const onClickNumber = (event) => {
   pushNumber(event.target.innerText);
+  calculate();
 };
 
 const onClickOperator = (event) => {
