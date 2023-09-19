@@ -38,3 +38,16 @@ header {
   color: rgb(110, 110, 110);
   border: hidden;
 }
+
+.keypad .reset {
+  color: rgb(228, 125, 94);
+}
+
+.keypad .operator {
+  color: rgb(89, 167, 229);
+}
+
+.keypad .evaluate {
+  background-color: rgb(89, 167, 229);
+  color: rgb(255, 255, 255);
+}
