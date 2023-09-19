@@ -36,11 +36,14 @@ const pushOperator = (operator) => {
   setIsDotUsed(false);
 };
 
+// 소수점 입력 핸들러
 const pushDot = (dot) => {
-  if (isDotUsed == false) {
-    input.innerText += dot;
-    setIsDotUsed(true);
-  }
+  if (isDotUsed == true) return;
+
+  if (isNaN(input.innerText[input.innerText.length - 1]))
+    input.innerText += '0' + dot;
+  else input.innerText += dot;
+  setIsDotUsed(true);
 };
 
 // onclick 이벤트 핸들러
